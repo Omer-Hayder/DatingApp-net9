@@ -12,6 +12,6 @@ namespace API.Entities
 
         // Navigation Properties
         public int AppUserId { get; set; }
-        public AppUser AppUser { get; set; } = null!;
+        public virtual AppUser AppUser { get; set; } = null!;
     }
 }
