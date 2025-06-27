@@ -2,14 +2,13 @@ import { CommonModule } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
 import { NavComponent } from "./nav/nav.component";
 import { AccountService } from './_services/account.service';
-import { HomeComponent } from "./home/home.component";
 import { RouterModule } from '@angular/router';
 import { NgxSpinnerComponent } from 'ngx-spinner';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterModule, CommonModule, NavComponent, HomeComponent, NgxSpinnerComponent],
+  imports: [RouterModule, CommonModule, NavComponent, NgxSpinnerComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
