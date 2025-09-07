@@ -4,6 +4,7 @@ import { NavComponent } from "./nav/nav.component";
 import { AccountService } from './_services/account.service';
 import { RouterModule } from '@angular/router';
 import { NgxSpinnerComponent } from 'ngx-spinner';
+import { LikesService } from './_services/likes.service';
 
 @Component({
   selector: 'app-root',
@@ -15,6 +16,7 @@ import { NgxSpinnerComponent } from 'ngx-spinner';
 export class AppComponent implements OnInit {
   title = 'DatingApp';
   private accountService = inject(AccountService);
+  private likeService = inject(LikesService);
 
   ngOnInit(): void {
     this.setCurrentUser();
@@ -24,7 +26,7 @@ export class AppComponent implements OnInit {
     const userString = localStorage.getItem("user");
     if (!userString) return;
     const user = JSON.parse(userString);
-    this.accountService.currentUser.set(user);
+    this.accountService.setCurrentUser(user);
   }
 
 }
